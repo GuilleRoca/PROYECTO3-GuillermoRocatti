@@ -13,7 +13,7 @@ const server = express();
 server.use(express.json());
 
 
-//Listado de categorías
+//Obtener listado de categorías : Ruta GET http://127.0.0.1:8080/api/v1/categorias
 server.get('/api/v1/categorias' , async (req,res) => {
     const categorias = await Categoria.findAll()
     res.status(200).send(categorias)

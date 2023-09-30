@@ -44,7 +44,7 @@ router.get("/genero/:genero", async (req, res, next) =>  {
     res.status(200).send(catalogoGender);
 })
 
-//Catálogo de títulos filtrado por Categoría : Ruta GET http://127.0.0.1:8080/api/v1/catalogo/Categoría/:Categoría
+//Catálogo de títulos filtrado por Categoría : Ruta GET http://127.0.0.1:8080/api/v1/catalogo/categoria/:categoria
 router.get("/categoria/:categoria", async (req, res, next) =>  {
     const category = req.params.categoria
     const catalogoCategory = await Catalogo.findAll({ where:{categoria: { [Op.substring]: category }}})

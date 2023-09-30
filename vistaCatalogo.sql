@@ -3,7 +3,7 @@ USE trailerflixdb;
 CREATE VIEW vistaCatalogo AS
 SELECT
     c.catalogoId AS id,
-    c.poster,
+    CONCAT('https://www.trailerflix.com',c.poster) AS poster,
     c.titulo,
     cat.categoriaNombre AS categoria,
     (
